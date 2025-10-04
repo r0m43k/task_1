@@ -97,7 +97,7 @@ func fetchAndCheck(client *http.Client, url string) ([]string, bool) {
 	}
 
 	if netCap > 0 && netUsed*100 > netCap*90 {
-		freeMbit := ((netCap - netUsed) * 8) / (1024 * 1024)
+		freeMbit := (netCap - netUsed) / 1_000_000
 		out = append(out, fmt.Sprintf("Network bandwidth usage high: %d Mbit/s available", freeMbit))
 	}
 	return out, true
