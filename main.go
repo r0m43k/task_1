@@ -20,7 +20,7 @@ func main() {
 	if url == "" {
 		url = URL
 	}
-
+	fmt.Printf("URL: %s\n", url)
 	client := &http.Client{Timeout: 3 * time.Second}
 	ticker := time.NewTicker(pollInterval)
 	defer ticker.Stop()
